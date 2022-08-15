@@ -1,36 +1,36 @@
-# What is Python
+# O que é o Python
 
-Python is a popular programming language. It was created in 1991 by Guido van Rossum.
+Python é uma liguagem de programação popular. Foi criada em 1991 por Guido van Rossum.
 
-Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.
+O Python é uma linguagem poderosa e fácil de aprender. Ele possui estruturas de dados de alto nível e uma abordagem simples mas eficaz a programação orientada por objetos. A sintaxe elegante do Python e a escrita dinamica, em conjunto com a sua natureza intrepretativa fazem com que seja a linguagem ideal para desenvolvimento rápido de software nas mais diversas áreas e plataformas.
 
-It is used for:
+É usado para:
 
-- web development (server-side),
-- software development,
-- mathematics,
-- system scripting.
+- Desenvolvimento Web (lado do servidor),
+- Desenvolvimento de Software,
+- Matematicas,
+- Scripting.
 
-## What can Python do?
+## O que é que o Python pode fazer?
 
-- Python can be used on a server to create web applications.
-- Python can be used alongside software to create workflows.
-- Python can connect to database systems. It can also read and modify files.
-- Python can be used to handle big data and perform complex mathematics.
-- Python can be used for rapid prototyping, or for production-ready software development.
+- Pode ser usado num servidor para criar aplicações web.
+- Pode ser usado a par com software para criar fluxos de trabalho (workflows).
+- Python pode-se conectar com sistemas de base de dados. Também consegue ler e escrever em ficheiros.
+- Pode ser usado para big data e para complexas funções matemáticas. (a famosa Machine Learning)
+- Pode ser usado para a criação rápida de prótotipos ou software pronto para produção.
 
-## Why Python?
+## Porquê Python?
 
-- Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).
-- Python has a simple syntax similar to the English language.
-- Python has syntax that allows developers to write programs with fewer lines than some other programming languages.
-- Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.
-- Python can be treated in a procedural way, an object-orientated way or a functional way.
+- O Python funciona em diferentes plataformas (Windows, Mac, Linux, Raspberry Pi, etc).
+- O Python possui uma sintaxe simples e semelhante ao inglês.
+- A sintaxe do Python premite developers a escrita de programas com menos linhas que outras linguagens de programação.
+- O Python corre num sistema de intrapretação (é uma linguagem intrepretativa), isto significa que o código pode ser executado assim que é escrito (não precisa de ser compilado). Isto significa que prototipar pode ser bastante rápido.
+- O Python pode ser tratado de uma forma imperativa, orientada a objetos ou funcional.
 
-## Good to know
+## Importante saber
 
-- The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular.
-- In this tutorial Python will be written in a text editor. It is possible to write Python in an Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful when managing larger collections of Python files.
+- A versão mais recente do Python é o Python 3, que será a usada nos tuturiais.
+- É possivel escrever Python em "Integrated Development Environments" (IDEs), como Pycharm ou Visual Studio Code. Os IDEs são bastante uteis quando estamos a falar de quantidades extensas de ficheiros python (.py).
 
 ## References
 

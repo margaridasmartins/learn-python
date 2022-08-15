@@ -1,226 +1,245 @@
-# Playground and Cheatsheet for Learning Python
-> 🇺🇦 UKRAINE [IS BEING ATTACKED](https://twitter.com/MFA_Ukraine) BY RUSSIAN ARMY. CIVILIANS ARE GETTING KILLED. RESIDENTIAL AREAS ARE GETTING BOMBED.
-> - Help Ukraine via [National Bank of Ukraine](https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi)
-> - Help Ukraine via [SaveLife](https://savelife.in.ua/en/donate-en/) fund
-> - More info on [war.ukraine.ua](https://war.ukraine.ua/)
+# Playground e Cheatsheet Para Aprender Python
 
 [![Build Status](https://travis-ci.org/trekhleb/learn-python.svg?branch=master)](https://travis-ci.org/trekhleb/learn-python)
 
-> This is a collection of Python scripts that are split by [topics](#table-of-contents) and contain 
-code examples with explanations, different use cases and links to further readings.
+> Essa é uma coleção de scripts Python dividida em [tópicos](#índice) que contém 
+exemplos de código com explicações, diferentes usos e links para outras leituras.
 
-> _Read this in:_ [_Português_](README.pt-BR.md), [_Español_](README.es-ES.md), [_Traditional Chinese_](README.zh-TW.md).
 
-It is a **playground** because you may change or add the code to see how it works 
-and [test it out](#testing-the-code) using assertions. It also allows you 
-to [lint the code](#linting-the-code) you've wrote and check if it fits to Python code style guide.
-Altogether it might make your learning process to be more interactive and it might help you to keep 
-code quality pretty high from very beginning.
+É um **playground** porque podes fazer alterações no código para ver como ele se comporta,
+além de [testá-lo](#testando-o-código) usando asserções. Também é possível 
+[revisar o código](#revisando-o-código) que você escreveu automaticamente e verificar se ele se encaixa
+no guia de estilo de código Python.
+Isso tudo pode tornar seu processo de aprendizagem mais interativo e ajudar a manter a qualidade
+do código bastante alta desde o início.
 
-It is a **cheatsheet** because you may get back to these code examples once you want to recap the 
-syntax of [standard Python statements and constructions](#table-of-contents). Also because the 
-code is full of assertions you'll be able to see expected functions/statements output right away
-without launching them.
+É um **cheatsheet** porque você pode voltar a esses exemplos de código quando quiser recapitular a sintaxe das 
+[estruturas padrão do Python](#índice). O código está cheio de asserções, então você poderá ver o retorno das funções sem precisar executá-las.
 
-> _You might also be interested in 🤖 [Interactive Machine Learning Experiments](https://github.com/trekhleb/machine-learning-experiments)_
+> _Você pode se interessar também por 🤖 [Interactive Machine Learning Experiments](https://github.com/trekhleb/machine-learning-experiments)_
 
-## How to Use This Repository
+## Como Usar Esse Repositório
 
-Each Python script in this repository has the following structure:
+Nesse repositório, cada script Python possui a seguinte estrutura:
 
 ```python
-"""Lists  <--- Name of the topic here
+"""Lists  <--- Nome do tópico
 
-# @see: https://www.learnpython.org/en/Lists  <-- Link to further readings goes here
+# @see: https://www.learnpython.org/en/Lists  <-- Link para outras leituras.
 
-Here might go more detailed explanation of the current topic (i.e. general info about Lists).
+A seguir, uma explicação mais detalhada do tópico atual (ex, informações gerais sobre listas (Lists)).
 """
 
 
 def test_list_type():
-    """Explanation of sub-topic goes here.
+    """Explicação do subtópico.
     
-    Each file contains test functions that illustrate sub-topics (i.e. lists type, lists methods).
+    Cada arquivo contém funções de teste que ilustram subtópicos (ou seja, tipo de lista, métodos de lista).
     """
     
-    # Here is an example of how to build a list.  <-- Comments here explain the action
+    # Here is an example of how to build a list.  <-- Comentários em inglês explicam a ação.
     squares = [1, 4, 9, 16, 25]
     
     # Lists can be indexed and sliced. 
     # Indexing returns the item.
-    assert squares[0] == 1  # <-- Assertions here illustrate the result.
+    assert squares[0] == 1  # <-- As asserções ilustram o resultado.
     # Slicing returns a new list.
-    assert squares[-3:] == [9, 16, 25]  # <-- Assertions here illustrate the result.
+    assert squares[-3:] == [9, 16, 25]  # <-- As asserções ilustram o resultado.
 ```
 
-So normally you might want to do the following:
+Então você pode querer fazer o seguinte:
 
-- [Find the topic](#table-of-contents) you want to learn or recap.
-- Read comments and/or documentation that is linked in each script's docstring (as in example above). 
-- Look at code examples and assertions to see usage examples and expected output.
-- Change code or add new assertions to see how things work.
-- [Run tests](#testing-the-code) and [lint the code](#linting-the-code) to see if it work and is 
-written correctly.
+- [Encontrar o tópico](#índice) que deseja aprender ou recapitular.
+- Ler os comentários e/ou a documentação vinculada em cada script (como no exemplo acima).
+- Analisar os exemplos e asserções para ver exemplos de uso e saída esperada das funções.
+- Alterar o código ou adicionar novas asserções para ver o que acontece.
+- [Executar testes](#testando-o-código) e [revisar o código](#revisando-o-código) para ver se ele
+funciona e para saber se está escrito corretamente. 
 
-## Table of Contents
+## Índice
 
-1. **Getting Started**
-    - [What is Python](src/getting_started/what_is_python.md)
-    - [Python Syntax](src/getting_started/python_syntax.md)
-    - [Variables](src/getting_started/test_variables.py)
-2. **Operators**
-    - [Arithmetic Operators](src/operators/test_arithmetic.py) (`+`, `-`, `*`, `/`, `//`, `%`, `**`)
-    - [Bitwise Operators](src/operators/test_bitwise.py) (`&`, `|`, `^`, `>>`, `<<`, `~`)
-    - [Assignment Operators](src/operators/test_assigment.py) (`=`, `+=`, `-=`, `/=`, `//=` etc.)
-    - [Comparison Operator](src/operators/test_comparison.py) (`==`, `!=`, `>`, `<`, `>=`, `<=`)
-    - [Logical Operators](src/operators/test_logical.py) (`and`, `or`, `not`)
-    - [Identity Operators](src/operators/test_identity.py) (`is`, `is not`)
-    - [Membership Operators](src/operators/test_membership.py) (`in`, `not in`)
-3. **Data Types**
-    - [Numbers](src/data_types/test_numbers.py) (including booleans)
-    - [Strings](src/data_types/test_strings.py) and their methods
-    - [Lists](src/data_types/test_lists.py) and their methods (including list comprehensions)
-    - [Tuples](src/data_types/test_tuples.py)
-    - [Sets](src/data_types/test_sets.py) and their methods
-    - [Dictionaries](src/data_types/test_dictionaries.py)
-    - [Type Casting](src/data_types/test_type_casting.py)
-4. **Control Flow**
-    - [The `if` statement](src/control_flow/test_if.py)
-    - [The `for` statement](src/control_flow/test_for.py) (and `range()` function)
-    - [The `while` statement](src/control_flow/test_while.py)
-    - [The `try` statements](src/control_flow/test_try.py)
-    - [The `break` statement](src/control_flow/test_break.py)
-    - [The `continue` statement](src/control_flow/test_continue.py)
-5. **Functions**
-    - [Function Definition](src/functions/test_function_definition.py) (`def` and `return` statements)
-    - [Scopes of Variables Inside Functions](src/functions/test_function_scopes.py) (`global` and `nonlocal` statements)
-    - [Default Argument Values](src/functions/test_function_default_arguments.py)
-    - [Keyword Arguments](src/functions/test_function_keyword_arguments.py)
-    - [Arbitrary Argument Lists](src/functions/test_function_arbitrary_arguments.py)
-    - [Unpacking Argument Lists](src/functions/test_function_unpacking_arguments.py) (`*` and `**` statements)
-    - [Lambda Expressions](src/functions/test_lambda_expressions.py) (`lambda` statement)
-    - [Documentation Strings](src/functions/test_function_documentation_string.py)
-    - [Function Annotations](src/functions/test_function_annotations.py)
-    - [Function Decorators](src/functions/test_function_decorators.py)
+1. **Começando**
+    - [O que é Python](src/getting_started/what_is_python.md)
+    - [Sintaxe Python](src/getting_started/python_syntax.md)
+    - [Variáveis](src/getting_started/test_variables.py)
+2. **Operadores**
+    - [Operadores Aritméticos](src/operators/test_arithmetic.py) (`+`, `-`, `*`, `/`, `//`, `%`, `**`)
+    - [Operadores Bitwise](src/operators/test_bitwise.py) (`&`, `|`, `^`, `>>`, `<<`, `~`)
+    - [Operadores de Atribuição](src/operators/test_assigment.py) (`=`, `+=`, `-=`, `/=`, `//=` etc.)
+    - [Operadores de Comparação](src/operators/test_comparison.py) (`==`, `!=`, `>`, `<`, `>=`, `<=`)
+    - [Operadores Lógicos](src/operators/test_logical.py) (`and`, `or`, `not`)
+    - [Operadores de Indentidade](src/operators/test_identity.py) (`is`, `is not`)
+    - [Operadores de Associação](src/operators/test_membership.py) (`in`, `not in`)
+3. **Tipos de Dados**
+    - [Números](src/data_types/test_numbers.py) (incluindo boleanos)
+    - [Strings](src/data_types/test_strings.py) e seus métodos
+    - [Listas](src/data_types/test_lists.py) e seus métodos (incluindo lista de compreensões)
+    - [Tuplas](src/data_types/test_tuples.py)
+    - [Conjuntos](src/data_types/test_sets.py) e seus métodos
+    - [Dicionários](src/data_types/test_dictionaries.py)
+    - [Casting de Tipo](src/data_types/test_type_casting.py)
+4. **Controles de Fluxo**
+    - [A declaração `if`](src/control_flow/test_if.py)
+    - [A declaração `for`](src/control_flow/test_for.py) (e a função `range()`)
+    - [A declaração `while`](src/control_flow/test_while.py)
+    - [A declaração `try`](src/control_flow/test_try.py)
+    - [A declaração `break`](src/control_flow/test_break.py)
+    - [A declaração `continue`](src/control_flow/test_continue.py)
+5. **Funções**
+    - [Definição de Função](src/functions/test_function_definition.py) (declaração `def` e `return`)
+    - [Variáveis Dentro das Funções](src/functions/test_function_scopes.py) (declaração `global` e `nonlocal`)
+    - [Valores Padrão de Argumentos](src/functions/test_function_default_arguments.py)
+    - [Argumentos de palavras-chave](src/functions/test_function_keyword_arguments.py)
+    - [Listas de Argumento Arbitrárias](src/functions/test_function_arbitrary_arguments.py)
+    - [Desfazendo Lista de Argumentos](src/functions/test_function_unpacking_arguments.py) (declaração `*` e `**`)
+    - [Expressões Lambda](src/functions/test_lambda_expressions.py) (declaração `lambda`)
+    - [Documentação das Strings](src/functions/test_function_documentation_string.py)
+    - [Função de Anotações](src/functions/test_function_annotations.py)
+    - [Função de Decoradores](src/functions/test_function_decorators.py)
 6. **Classes**
-    - [Class Definition](src/classes/test_class_definition.py) (`class` statement)
-    - [Class Objects](src/classes/test_class_objects.py)
-    - [Instance Objects](src/classes/test_instance_objects.py)
-    - [Method Objects](src/classes/test_method_objects.py)
-    - [Class and Instance Variables](src/classes/test_class_and_instance_variables.py)
-    - [Inheritance](src/classes/test_inheritance.py)
-    - [Multiple Inheritance](src/classes/test_multiple_inheritance.py)
-7. **Modules**
-    - [Modules](src/modules/test_modules.py) (`import` statement)
-    - [Packages](src/modules/test_packages.py)
-8. **Errors and Exceptions**
-    - [Handling Exceptions](src/exceptions/test_handle_exceptions.py) (`try` statement)
-    - [Raising Exceptions](src/exceptions/test_raise_exceptions.py) (`raise` statement)
-9. **Files**
-    - [Reading and Writing](src/files/test_file_reading.py) (`with` statement)
-    - [Methods of File Objects](src/files/test_file_methods.py)
-10. **Additions**
-    - [The `pass` statement](src/additions/test_pass.py)
-    - [Generators](src/additions/test_generators.py) (`yield` statement)
-11. **Brief Tour of the Standard Libraries**
-    - [Serialization](src/standard_libraries/test_json.py) (`json` library)
-    - [File Wildcards](src/standard_libraries/test_glob.py) (`glob` library)
-    - [String Pattern Matching](src/standard_libraries/test_re.py) (`re` library)
-    - [Mathematics](src/standard_libraries/test_math.py) (`math`, `random`, `statistics` libraries)
-    - [Dates and Times](src/standard_libraries/test_datetime.py) (`datetime` library)
-    - [Data Compression](src/standard_libraries/test_zlib.py) (`zlib` library)
-12. **User input**
-    - [Terminal input](src/user_input/test_input.py) (`input` statement)
+    - [Definição de Classe](src/classes/test_class_definition.py) (declaração `class`)
+    - [Classes dos Objetos](src/classes/test_class_objects.py)
+    - [Instância dos Objetos](src/classes/test_instance_objects.py)
+    - [Métodos de Objetos](src/classes/test_method_objects.py)
+    - [Variável de Classe e Instância](src/classes/test_class_and_instance_variables.py)
+    - [Herança](src/classes/test_inheritance.py)
+    - [Herança Múltipla](src/classes/test_multiple_inheritance.py)
+7. **Módulos**
+    - [Módulos](src/modules/test_modules.py) (declaração `import`)
+    - [Pacotes](src/modules/test_packages.py)
+8. **Erros e Exceções**
+    - [Tratando Exceções](src/exceptions/test_handle_exceptions.py) (declaração `try`)
+    - [Levantando Exceções](src/exceptions/test_raise_exceptions.py) (declaração `raise`) 
+9. **Arquivos**
+    - [Lendo e Escrevendo](src/files/test_file_reading.py) (declaração `with`)
+    - [Métodos de Objetos de Arquivos](src/files/test_file_methods.py)
+10. **Adicional**
+    - [A declaração `pass`](src/additions/test_pass.py)
+    - [Geradores](src/additions/test_generators.py) (declaração `yield`)
+11. **Algumas Bibliotecas Padrão**
+    - [Serialization](src/standard_libraries/test_json.py) (biblioteca `json`)
+    - [File Wildcards](src/standard_libraries/test_glob.py) (biblioteca `glob`)
+    - [String Pattern Matching](src/standard_libraries/test_re.py) (biblioteca `re`)
+    - [Matemática](src/standard_libraries/test_math.py) (bibliotecas `math`, `random` e `statistics`)
+    - [Tempo e Datas](src/standard_libraries/test_datetime.py) (biblioteca `datetime`)
+    - [Comprimindo Dados](src/standard_libraries/test_zlib.py) (biblioteca `zlib`)
 
-## Prerequisites
+## Pré-requisitos
 
-**Installing Python**
+**Instalando o Python**
 
-Make sure that you have [Python3 installed](https://realpython.com/installing-python/) on your machine.
+Certifique-se de ter o [Python3 instalado](https://realpython.com/installing-python/) em sua máquina.
 
-You might want to use [venv](https://docs.python.org/3/library/venv.html) standard Python library
-to create virtual environments and have Python, pip and all dependent packages to be installed and 
-served from the local project directory to avoid messing with system wide packages and their 
-versions.
+Você pode usar a biblioteca padrão do Python [venv](https://docs.python.org/3/library/venv.html)
+para criar ambientes virtuais e ter o Python, pip e todos os outros pacotes a serem instalados
+ a partir do diretório local do projeto para evitar mexer com pacotes externos ou do sistema.
 
-Depending on your installation you might have access to Python3 interpreter either by
-running `python` or `python3`. The same goes for pip package manager - it may be accessible either
-by running `pip` or `pip3`.
+Dependendo da sua instalação, você pode ter acesso ao interpretador Python3 executando `python` ou `python3`. O mesmo vale para o gerenciador de pacotes pip, você pode acessá-lo executando `pip` ou `pip3`.
 
-You may check your Python version by running:
+Você pode ver a versão do seu Python executando:
 
 ```bash
 python --version
 ```
 
-Note that in this repository whenever you see `python` it will be assumed that it is Python **3**.
+Observe que neste repositório sempre que você vê o `python`, será assumido que é o Python **3**.
 
-**Installing dependencies**
+**Instalando dependências**
 
-Install all dependencies that are required for the project by running:
+Instale todas as dependências necessárias para o projeto executando:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Testing the Code
+## Testando o Código
 
-Tests are made using [pytest](https://docs.pytest.org/en/latest/) framework.
+Testes são feitos usando o framework [pytest](https://docs.pytest.org/en/latest/).
 
-You may add new tests for yourself by adding files and functions with `test_` prefix
-(i.e. `test_topic.py` with `def test_sub_topic()` function inside).
+Você pode adicionar novos testes criando arquivos e funções com o prefixo `test_` 
+(ex. `test_topic.py` com a função `def test_sub_topic()` dentro).
 
-To run all the tests please execute the following command from the project root folder:
+Para executar todos os testes, execute o seguinte comando na pasta raiz do projeto:
 
 ```bash
 pytest
 ```
 
-To run specific tests please execute:
+Para executar testes específicos, execute:
 
 ```bash
 pytest ./path/to/the/test_file.py
 ```
 
-## Linting the Code
+## Revisando o Código
 
-Linting is done using [pylint](http://pylint.pycqa.org/) and [flake8](http://flake8.pycqa.org/en/latest/) libraries.
+A revisão é feita usando as bibliotecas [pylint](http://pylint.pycqa.org/) e [flake8](http://flake8.pycqa.org/en/latest/).
 
 ### PyLint
 
-To check if the code is written with respect
-to [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide please run:
+Para verificar se o código está escrito de acordo com o guia de estilo 
+do [PEP 8](https://www.python.org/dev/peps/pep-0008/), execute:
 
 ```bash
 pylint ./src/
 ```
 
-In case if linter will detect error (i.e. `missing-docstring`) you may want to read more about 
-specific error by running:
+Caso o pylint detecte um erro (ex. `missing-docstring`), convém ler mais sobre erros específicos executando:
 
 ```bash
 pylint --help-msg=missing-docstring
 ```
 
-[More about PyLint](http://pylint.pycqa.org/)
+[Saber mais sobre PyLint](http://pylint.pycqa.org/)
 
 ### Flake8
 
-To check if the code is written with respect
-to [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide please run:
+Para verificar se o código está escrito de acordo com o guia de estilo 
+do [PEP 8](https://www.python.org/dev/peps/pep-0008/), execute:
 
 ```bash
 flake8 ./src
 ```
 
-Or if you want to have more detailed output you may run:
+Ou, se você quiser uma saída mais detalhada, execute:
 
 ```bash
 flake8 ./src --statistics --show-source --count
 ```
 
-[More about Flake8](http://flake8.pycqa.org/en/latest/)
+[Saber mais sobre Flake8](http://flake8.pycqa.org/en/latest/)
 
-## Supporting the project
+---
 
-You may support this project via ❤️️ [GitHub](https://github.com/sponsors/trekhleb) or ❤️️ [Patreon](https://www.patreon.com/trekhleb).
+Traduzido por [vilmacio22](https://github.com/vilmacio22).
+
+## Importante!
+
+- Garantir antes de qualquer aleteração que estão no branch certo
+
+```
+    git checkout <nome_do_vosso_branch>
+```
+
+- Garantir que estão a utilizar a versão mais atualizada
+
+```
+    git checkout main
+    git pull
+    git checkout <nome_do_vosso_branch>
+    git merge main
+```
+
+- No final de programar atualizar o branch remoto
+
+(na pasta raiz)
+
+```
+    git add * 
+    git commit -m "<resumo do que fizeram>"
+    git push
+```
+
+## Partes revistas
+
+1. Começando (getting_started)
