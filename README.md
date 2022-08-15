@@ -224,10 +224,10 @@ Traduzido por [vilmacio22](https://github.com/vilmacio22).
 - Garantir que estão a utilizar a versão mais atualizada
 
 ```
-    git checkout main
+    git checkout master
     git pull
     git checkout <nome_do_vosso_branch>
-    git merge main
+    git merge master
 ```
 
 - No final de programar atualizar o branch remoto
