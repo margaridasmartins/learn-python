@@ -1,28 +1,27 @@
-"""IF statement
+""" Comando If
 
 @see: https://docs.python.org/3/tutorial/controlflow.html
 
-There can be zero or more elif parts, and the else part is optional. The keyword ‘elif’ is
-short for ‘else if’, and is useful to avoid excessive indentation.
+Os blocos if else premitem executar código só se se verificar determinada condição
+Podem existir zero or mais partes elif, e a parte else é opcional. A palavra ‘elif’ é uma abreviação
+de ‘else if’ (ou se).
 
-An if … elif … elif … sequence is a substitute for the switch or case statements found
-in other languages.
 """
 
 
 def test_if_statement():
-    """IF statement"""
+    """Comando If"""
 
-    number = 15
-    conclusion = ''
+    numero = 15
+    conclusao = ''
 
-    if number < 0:
-        conclusion = 'Number is less than zero'
-    elif number == 0:
-        conclusion = 'Number equals to zero'
-    elif number < 1:
-        conclusion = 'Number is greater than zero but less than one'
+    if numero < 0: 
+        conclusao = 'Number is less than zero' # este codigo so será executado se o numero for menor que 0
+    elif numero == 0:
+        conclusao = 'Number equals to zero' # este codigo so será executado se o numero for igual a 0
+    elif numero < 1:
+        conclusao = 'Number is greater than zero but less than one' # este codigo so será executado se o numero for menor que 1 e maior que 0
     else:
-        conclusion = 'Number bigger than or equal to one'
+        conclusao = 'Number bigger than or equal to one' # este codigo so será executado se nenhuma das condições acima se verificou (ou seja numero >= 1)
 
-    assert conclusion == 'Number bigger than or equal to one'
+    assert conclusao == 'Number bigger than or equal to one'

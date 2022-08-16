@@ -243,3 +243,4 @@ Traduzido por [vilmacio22](https://github.com/vilmacio22).
 ## Partes revistas
 
 1. Começando (getting_started)
+2. Operadores (operators)

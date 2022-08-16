@@ -1,36 +1,37 @@
-"""Comparison operators
+"""Operadores de comparação
 
 @see: https://www.w3schools.com/python/python_operators.asp
 
-Comparison operators are used to compare two values.
+Os operadores de comparação são usados para comparar dois valores.
 """
 
 
 def test_comparison_operators():
     """Comparison operators"""
 
-    # Equal.
+    # É Igual.
+    # Atribuição: =  Comparação: ==
     number = 5
     assert number == 5
 
-    # Not equal.
+    # Não é igual.
     number = 5
     assert number != 3
 
-    # Greater than.
+    # Maior que.
     number = 5
     assert number > 3
 
-    # Less than.
+    # Menor que.
     number = 5
     assert number < 8
 
-    # Greater than or equal to
+    # Maior ou igual a 
     number = 5
     assert number >= 5
     assert number >= 4
 
-    # Less than or equal to
+    # Menor ou igual a 
     number = 5
     assert number <= 5
     assert number <= 6
