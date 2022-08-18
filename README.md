@@ -240,6 +240,15 @@ Traduzido por [vilmacio22](https://github.com/vilmacio22).
     git push
 ```
 
-## Partes revistas
+## Ordem de aprendizagem
 
 1. Começando (getting_started)
+2. Operadores (operators) 
+    1. test_arithmetic
+    2. test_biwise
+    3. test_comparison
+    4. test_assignment
+    5. test_logical
+3. Contolos de fluxo (control_flow)
+    1. test_if
+4. **problemas_I**
