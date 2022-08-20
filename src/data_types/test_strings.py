@@ -4,74 +4,74 @@
 @see: https://www.w3schools.com/python/python_strings.asp
 @see: https://www.w3schools.com/python/python_ref_string.asp
 
-Besides numbers, Python can also manipulate strings, which can be
-expressed in several ways. They can be enclosed in single quotes ('...')
-or double quotes ("...") with the same result.
+O Python premite manipular strings (texto), que pode ser expressos em diferentes 
+formas. As strings podem ser delimitadas em aspas simples ('<texto>') ou 
+aspas duplas ("<texto>"), o resultado é o mesmo.
 """
 
 import pytest
 
 
 def test_string_type():
-    """String type"""
+    """Tipo String"""
 
-    # String with double quotes.
+    # String com aspas duplas.
     name_1 = "John"
-    # String with single quotes.
+    # String com aspas simples.
     name_2 = 'John'
-    # Strings created with different kind of quotes are treated the same.
+
+    # Strings creadas com aspas diferentes são tratadas da mesma forma.
     assert name_1 == name_2
     assert isinstance(name_1, str)
     assert isinstance(name_2, str)
 
-    # \ can be used to escape quotes.
-    # use \' to escape the single quote or use double quotes instead.
+    # O caracter \ pode ser usado para se escrever aspas dentro de strings.
+    # Com o mesmo efeito, tambem se pode usar aspas simples dentro de aspas duplas e vice-versa
     single_quote_string = 'doesn\'t'
     double_quote_string = "doesn't"
 
     assert single_quote_string == double_quote_string
 
-    # \n means newline.
+    # O caractere \n  significa "new line" ou seja mudar de linha.
     multiline_string = 'First line.\nSecond line.'
-    # Without print(), \n is included in the output.
-    # But with print(), \n produces a new line.
+
+    # Experiementa ver a mudança de linha no python interativo correndo o comando
+    print(multiline_string)
+
     assert multiline_string == 'First line.\nSecond line.'
 
-    # Strings can be indexed, with the first character having index 0.
-    # There is no separate character type; a character is simply a string
-    # of size one. Note that since -0 is the same as 0, negative indices
-    # start from -1.
+    # As Strings podem ser indexadas, ou seja é possivel obter um caracter de uma string
+    # sabendo a sua posição, o primeiro caracter tem sempre index(posição) 0, o segundo index 1, etc.
+    # Também existem indexs negativos que começam no fim da palavra, ou seja o index -1 corresponde ao ultimo caracter da string.
+    # a sintaxe para aceder um caracter é: nome_variavel[index]
     word = 'Python'
-    assert word[0] == 'P'  # First character.
-    assert word[5] == 'n'  # Fifth character.
-    assert word[-1] == 'n'  # Last character.
-    assert word[-2] == 'o'  # Second-last character.
-    assert word[-6] == 'P'  # Sixth from the end or zeroth from the beginning.
+    assert word[0] == 'P'  # O primeiro character (index 0)
+    assert word[5] == 'n'  # O sexto character (index 5).
+    assert word[-1] == 'n'  # O ultimo caracter (index -1).
+    assert word[-2] == 'o'  # O penultimo caracter (index -2).
+    assert word[-6] == 'P'  # O sexto caracter a contar do fim que corresponde ao primeiro caracter.
 
-    assert isinstance(word[0], str)
 
-    # In addition to indexing, slicing is also supported. While indexing is
-    # used to obtain individual characters, slicing allows you to obtain
-    # substring:
-    assert word[0:2] == 'Py'  # Characters from position 0 (included) to 2 (excluded).
-    assert word[2:5] == 'tho'  # Characters from position 2 (included) to 5 (excluded).
+    # Para além de poderem ser indexadas, as strings podem ser cortadas (slicing). Enquanto que o indexamento
+    # é usado para obter caracteres individuais o slicing é usado para obter substrings (uma parte da string):
+    assert word[0:2] == 'Py'  # Caracteres a partir da posição 0 (incluida) até 2 (excluido).
+    assert word[2:5] == 'tho'  # Caracteres a partir da posição 2 (incluido) até 5 (excluido).
 
-    # Note how the start is always included, and the end always excluded.
-    # This makes sure that s[:i] + s[i:] is always equal to s:
+    # O index do inicio é sempre incluido e o fim é sempre excluido
+    # Os indexs têm valores por defeito, se omitirmos o index inicial o default é 0,
+    # ou seja, começa do inicio, se omitirmos o index final o default é o tamanho da string, 
+    # ou seja, o ultimo caracter
     assert word[:2] + word[2:] == 'Python'
     assert word[:4] + word[4:] == 'Python'
 
-    # Slice indices have useful defaults; an omitted first index defaults to
-    # zero, an omitted second index defaults to the size of the string being
-    # sliced.
-    assert word[:2] == 'Py'  # Character from the beginning to position 2 (excluded).
-    assert word[4:] == 'on'  # Characters from position 4 (included) to the end.
-    assert word[-2:] == 'on'  # Characters from the second-last (included) to the end.
+    assert word[:2] == 'Py'  # Substring a partir do caracter inicial até à posição 2 (exclusivamente).
+    assert word[4:] == 'on'  # Substring  a partir do caracter com index 4 (o quinto) até ao fim da palavra.
+    assert word[-2:] == 'on'  # Substring a partir do penultimo caracter (inclusivamente) até ao fim.
 
-    # One way to remember how slices work is to think of the indices as
-    # pointing between characters, with the left edge of the first character
-    # numbered 0. Then the right edge of the last character of a string of n
-    # characters has index n, for example:
+    # Uma forma de relembrar como é que o slicing funciona é pensar nos indexs como
+    # pontos entre caracteres, sendo 0 a posição à esquerda do primeiro caracter 
+    # Assim, a posição à direita do ultimo caracter de uma string com n caracteres
+    # tem index n, por exemplo:
     #
     # +---+---+---+---+---+---+
     #  | P | y | t | h | o | n |
@@ -79,34 +79,31 @@ def test_string_type():
     #  0   1   2   3   4   5   6
     # -6  -5  -4  -3  -2  -1
 
-    # Attempting to use an index that is too large will result in an error.
+    # Atenção! Tentar usar um index que é muito grande (maior que o numero de caracteres da palavra) resulta num erro.
     with pytest.raises(Exception):
         not_existing_character = word[42]
         assert not not_existing_character
 
-    # However, out of range slice indexes are handled gracefully when used
-    # for slicing:
+    # Porém, o Python consegue lidar bem (não levanta erro) com indexes fora de alcance quando usados em slicing:
     assert word[4:42] == 'on'
-    assert word[42:] == ''
+    assert word[42:] == '' # como não existe caraceters a partir do index 42, o slice resulta numa string vazia
 
-    # Python strings cannot be changed — they are immutable. Therefore,
-    # assigning to an indexed position in the string
-    # results in an error:
+    # As strings no Python são imutavie, ou seja não podem ser mudadas. Assim,
+    # atribuir um valor a uma posição de uma string resulta num erro:
     with pytest.raises(Exception):
-        # pylint: disable=unsupported-assignment-operation
-        word[0] = 'J'
+        word[0] = 'J' # operação impossivel
 
-    # If you need a different string, you should create a new one:
+    # Caso seja necessário uma string diferente deve-se criar uma nova:
     assert 'J' + word[1:] == 'Jython'
     assert word[:2] + 'py' == 'Pypy'
 
-    # The built-in function len() returns the length of a string:
+    # O Python possui uma função chamada len() que premite saber o tamanho de uma string:
     characters = 'supercalifragilisticexpialidocious'
     assert len(characters) == 34
 
-    # String literals can span multiple lines. One way is using triple-quotes: """..."""
-    # or '''...'''. End of lines are automatically included in the string, but it’s possible
-    # to prevent this by adding a \ at the end of the line. The following example:
+    # As strings podem ocupar multiplas linhas. Uma maneira é usar aspas triplas: """..."""
+    # ou '''...'''. O \n é automaticamente incluido na string, mas é possivel
+    # prevenir isto adicionando uma \ no final da linha. 
     multi_line_string = '''\
         First line
         Second line
@@ -117,30 +114,14 @@ def test_string_type():
         Second line
     '''
 
+    # Existe um terceiro parametro no slicing que premite saltar caracteres, 1 significa não saltar nenhum, 2 saltar 1 caracter, etc
+    assert word[::2] == "Pto" # começa no primeiro caracter P salta 1 caracter t, salta outro o e chega ao fim da palavra
+    assert word[1:-1:2] =="yh" # comaça no segundo caracter salta 1 caracter e não salta mais pois acaba no penultimo caracter
 
-def test_string_operators():
-    """Basic operations
 
-    Strings can be concatenated (glued together) with the + operator,
-    and repeated with *: 3 times 'un', followed by 'ium'
-    """
+    # Mensagem escondida, consegues decifrar?
 
-    assert 3 * 'un' + 'ium' == 'unununium'
-
-    # 'Py' 'thon'
-    python = 'Py' 'thon'
-    assert python == 'Python'
-
-    # This feature is particularly useful when you want to break long strings:
-    text = (
-        'Put several strings within parentheses '
-        'to have them joined together.'
-    )
-    assert text == 'Put several strings within parentheses to have them joined together.'
-
-    # If you want to concatenate variables or a variable and a literal, use +:
-    prefix = 'Py'
-    assert prefix + 'thon' == 'Python'
+    mensagem = "D" 
 
 
 def test_string_methods():

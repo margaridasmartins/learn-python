@@ -252,3 +252,6 @@ Traduzido por [vilmacio22](https://github.com/vilmacio22).
 3. Contolos de fluxo (control_flow)
     1. test_if
 4. **problemas_I**
+5. Tipos de Dados (data_types)
+    1. test_numbers
+    2. test_strings (NÃO COMPLETO)

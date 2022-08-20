@@ -1,65 +1,69 @@
-"""Numbers.
+"""Numeros.
 
 @see: https://docs.python.org/3/tutorial/introduction.html
 @see: https://www.w3schools.com/python/python_numbers.asp
 
-There are three numeric types in Python:
-- int (e.g. 2, 4, 20)
-    - bool (e.g. False and True, acting like 0 and 1)
-- float (e.g. 5.0, 1.6)
-- complex (e.g. 5+6j, 4-3j)
+Existem três tipos de números em Python:
+- int (ex 2, 4, 20)
+    - bool (False e True, onde Falso também pode ser representado como 0 e True como 1)
+- float (números decimais ex 5.0, 1.6)
+- complex (números complexos ex 5+6j, 4-3j)
 """
 
 
 def test_integer_numbers():
-    """Integer type
+    """Tipo Integer
 
-    Int, or integer, is a whole number, positive or negative,
-    without decimals, of unlimited length.
+    Int, ou integer, é um número inteiro, positivo ou negativo,
+    não tem casas deicimais e tem dimensão ilimitada
     """
 
-    positive_integer = 1
+    positive_integer = 1 
     negative_integer = -3255522
     big_integer = 35656222554887711
 
-    assert isinstance(positive_integer, int)
-    assert isinstance(negative_integer, int)
-    assert isinstance(big_integer, int)
+    assert isinstance(positive_integer, int) # ints podem ser positivos
+    assert isinstance(negative_integer, int) # ints podem ser negativos
+    assert isinstance(big_integer, int) # ints podem ser MUITO grandes
 
 
 def test_booleans():
-    """Boolean
+    """Tipo Boolean
 
-    Booleans represent the truth values False and True. The two objects representing the values
-    False and True are the only Boolean objects. The Boolean type is a subtype of the integer type,
-    and Boolean values behave like the values 0 and 1, respectively, in almost all contexts, the
-    exception being that when converted to a string, the strings "False" or "True" are returned,
-    respectively.
+    Booleans representam valores de verdade, verdadeiro (True) e falso (False). 
+    Um boolean só pode ser ter os valores True ou False. 
+    O tipo Boolean é um subtipo do tipo Integer, e os valores Boolean comportam-se como os valores 0 e 1,
+    em praticamente todos os contextos, a exceção é quando convertemos o valor para string em que é retornado as 
+    strings "True" e "False".
     """
 
     true_boolean = True
     false_boolean = False
 
-    assert true_boolean
-    assert not false_boolean
+    assert true_boolean 
+    assert not false_boolean # Não Falso é verdadeiro
 
     assert isinstance(true_boolean, bool)
     assert isinstance(false_boolean, bool)
 
-    # Let's try to cast boolean to string.
+    # Vamos tentar converter um boolean para uma string
     assert str(true_boolean) == "True"
     assert str(false_boolean) == "False"
 
+    # 1 representa True e 0 representa False
+    assert True == 1
+    assert False == 0 
 
 def test_float_numbers():
-    """Float type
+    """Tipo Float 
 
-    Float, or "floating point number" is a number, positive or negative,
-    containing one or more decimals.
+    Float, ou  "numero de virgula flutuante" é um numero, positivo ou negativo,
+    contendo um ou mais casas decimais.
     """
 
     float_number = 7.0
-    # Another way of declaring float is using float() function.
+
+    # Outra maneira (pouco usada) de declara um float é usando a função float().
     float_number_via_function = float(7)
     float_negative = -35.59
 
@@ -68,20 +72,22 @@ def test_float_numbers():
     assert isinstance(float_number_via_function, float)
     assert isinstance(float_negative, float)
 
-    # Float can also be scientific numbers with an "e" to indicate
-    # the power of 10.
+    # Os floats também podem ser numeros em notação cientifica, seguindo a seguinte notação:
+    # <base>E<potencia>, ou <base>e<potencia>
+
     float_with_small_e = 35e3
     float_with_big_e = 12E4
 
-    assert float_with_small_e == 35000
-    assert float_with_big_e == 120000
+    assert float_with_small_e == 35000 # 35 * 10^3
+    assert float_with_big_e == 120000 # 12 * 10^4
     assert isinstance(12E4, float)
     assert isinstance(-87.7e100, float)
 
 
 def test_complex_numbers():
-    """Complex Type"""
+    """Tipo complexo"""
 
+    # o Tipo complexo tem uma parte real e outra imaginaria que é indicada por um j no final
     complex_number_1 = 5 + 6j
     complex_number_2 = 3 - 2j
 
@@ -90,31 +96,3 @@ def test_complex_numbers():
     assert complex_number_1 * complex_number_2 == 27 + 8j
 
 
-def test_number_operators():
-    """Basic operations"""
-
-    # Addition.
-    assert 2 + 4 == 6
-
-    # Multiplication.
-    assert 2 * 4 == 8
-
-    # Division always returns a floating point number.
-    assert 12 / 3 == 4.0
-    assert 12 / 5 == 2.4
-    assert 17 / 3 == 5.666666666666667
-
-    # Modulo operator returns the remainder of the division.
-    assert 12 % 3 == 0
-    assert 13 % 3 == 1
-
-    # Floor division discards the fractional part.
-    assert 17 // 3 == 5
-
-    # Raising the number to specific power.
-    assert 5 ** 2 == 25  # 5 squared
-    assert 2 ** 7 == 128  # 2 to the power of 7
-
-    # There is full support for floating point; operators with
-    # mixed type operands convert the integer operand to floating point.
-    assert 4 * 3.75 - 1 == 14.0
